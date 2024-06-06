@@ -1,3 +1,4 @@
+import './Hearder.scss';
 
 function Header({ appName }) {
 
