@@ -9,12 +9,14 @@ function TodosList() {
   return (
     <>
         <div className="todos">
-          {store.todos.map(todo => 
+          {store.filteredTodos().length ? store.filteredTodos().map(todo => 
             <Todo
               todo={todo}
               key={todo.id}
             />
-          )}
+          ) :
+          'No to-dos to be shown. Try clearing the filter or add a new to-do.'
+        }
         </div>
     </>
   )
