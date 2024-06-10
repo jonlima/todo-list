@@ -53,6 +53,12 @@ function todosReducer (todos, action) {
                 }
               })
         }
+
+        case 'added': {
+            let newTodo = action.newTodo;
+            newTodo.id = todos.length ? Math.max(...todos.map(todo => todo.id)) + 1 : 1;;
+            return [...todos, newTodo];
+        }
     }
 
 }
